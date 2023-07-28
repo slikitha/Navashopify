@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="Login.css">
+</head>
+<body>
+    <div id ="header">
+        <script>
+          fetch('header.html')
+          .then((response)=>response.text())
+          .then((content)=>{
+            document.getElementById('header').innerHTML=content;
+          });
+        </script>
+      </div>
+  <section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-6">
+          <div class="card card-signup">
+            <div class="card-body p-4 p-lg-5">
+              <div class="d-flex align-items-center mb-4">
+                <img src="logo.png" alt="Logo" class="logo1 me-3">
+              </div>
+              <form onsubmit="addData(event)">
+                <!-- Registration form fields (name, email, password) here -->
+                <div class="mb-4">
+                  <input type="text" id="name" class="form-control form-control-lg" placeholder="productName" required />
+                </div>
+                <div class="mb-4">
+                  <input type="text" id="description" class="form-control form-control-lg" placeholder="productDescription" required />
+                </div>
+                <div class="mb-4">
+                  <input type="text" id="price" class="form-control form-control-lg" placeholder="Price" required/>
+                </div>
+                <div class="mb-4">
+                    <img id="image-display" src="" alt="Image not found">
+                    <input type="text" id="image" class="form-control form-control-lg" placeholder="Image" required/>
+                  </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Add Product</button>
+                <button onclick="displayProductData()">Fetch Products</button>
+                     <div id="dataDisplay"></div>
+              </form>
+              <!-- <button class="btn btn-primary btn-lg btn-block" type="submit">Products</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="products.js"></script>
+</body>
+</html>
